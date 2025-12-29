@@ -2,6 +2,7 @@ import React from "react";
 import assets from "../assets/assets";
 import { useState } from "react";
 import ThemeToggleBtn from "./ThemeToggleBtn";
+
 const Navbar = ({ theme, setTheme }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
