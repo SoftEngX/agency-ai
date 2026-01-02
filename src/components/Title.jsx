@@ -4,7 +4,7 @@ const Title = ({title, desc}) => {
 
   return (
     <>
-      <h2 className="text-3xl sm:text-5xl font-medium py-10">{title}</h2>
+      <h2 className="text-3xl sm:text-5xl font-medium ">{title}</h2>
       <p className="text-center text-gray-500 dark:text-white/75 mb-6 max-w-xl">
         {desc}
       </p>
