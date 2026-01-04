@@ -1,8 +1,34 @@
 import React from 'react'
 import Title  from './Title';
 import assets from '../assets/assets';
+import toast from 'react-hot-toast';
 
 const ContacUs = () => {
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    formData.append("access_key", "1768c71c-9492-49e9-ae25-c578346e2282");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        toast.success("Thank you for you submission!");
+      } else {
+        toast.error(data.message);
+      }
+
+    } catch (error) {
+      toast.error(error.message);
+    }
+
+    
+  }
   return (
     <div
       id="contact-us"
@@ -13,12 +39,13 @@ const ContacUs = () => {
         desc="Ready to grow your brand? Let’s connect and build something exceptional together."
       />
 
-      <form className="grid sm:grid-cols-2 gap-3 sm:gap-5 w-full max-w-2xl">
+      <form onSubmit={onSubmit} className="grid sm:grid-cols-2 gap-3 sm:gap-5 w-full max-w-2xl">
         <div>
           <p className="mb-2 text-sm font-medium">Your name</p>
           <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
             <img src={assets.person_icon} alt="" />
             <input
+              name="name"
               type="text"
               placeholder="Enter your name"
               className="w-full p-3 text-sm outline-none"
@@ -32,6 +59,7 @@ const ContacUs = () => {
           <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
             <img src={assets.email_icon} alt="" />
             <input
+              name="email"
               type="email"
               placeholder="Enter your email"
               className="w-full p-3 text-sm outline-none"
@@ -40,13 +68,22 @@ const ContacUs = () => {
           </div>
         </div>
 
-        <div className='sm:col-span-2'>
+        <div className="sm:col-span-2">
           <p className="mb-2 text-sm font-medium">Message</p>
-          <textarea rows={8} placeholder='Enter your message' className='w-full p-3 text-sm outline-none rounded-lg border border-gray-300 dark:border-gray-600'/>
+          <textarea
+            name="message"
+            rows={8}
+            placeholder="Enter your message"
+            className="w-full p-3 text-sm outline-none rounded-lg border border-gray-300 dark:border-gray-600"
+            required
+          />
         </div>
 
-        <button type='submit' className='w-max flex gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full curosor-pointer hover:scale-103 transition-all'>
-          Submit <img src={assets.arrow_icon} alt="" className='w-4' />
+        <button
+          type="submit"
+          className="w-max flex gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full curosor-pointer hover:scale-103 transition-all"
+        >
+          Submit <img src={assets.arrow_icon} alt="" className="w-4" />
         </button>
       </form>
     </div>
