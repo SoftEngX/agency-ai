@@ -39,8 +39,9 @@ const Hero = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transitsion={{ duration: 0.5, delay: 1 }}
         viewport={{ once: true }}
-        className="sm:text-lg font-medium text-gray-500 dark:text-white/75 max-w-[80%] sm:max-w-lg pb-3 text-sm">
-        Creating meaningful connections and turning big ideas into interactive
+        className="sm:text-lg font-medium text-gray-500 dark:text-white/75 max-w-[80%] sm:max-w-lg pb-3 text-sm"
+      >
+        We create meaningful connections by turning big ideas into interactive
         digital experiences.
       </motion.p>
 
