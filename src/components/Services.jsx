@@ -10,12 +10,12 @@ const Services = () => {
     {
       title: "Advertising",
       description:
-        "We turn bold ideas into powerful digital solutions that connect, engage....",
+        "We bring bold ideas to life through digital solutions that connect people and create engagement.",
       icon: assets.ads_icon,
     },
     {
       title: "Content Marketing",
-      description: "We help you execute your plan and deliver results.",
+      description: "We help you turn plans into results.",
       icon: assets.marketing_icon,
     },
     {
@@ -30,7 +30,6 @@ const Services = () => {
         "We turn bold ideas into powerful digital solutions that connect, engage...",
       icon: assets.social_icon,
     },
-    
   ];
   return (
     <motion.div
