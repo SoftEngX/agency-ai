@@ -9,7 +9,7 @@ const Footer = ({theme }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="bg-slate-50 dark:bg-gray-500 pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40"
+      className="bg-slate-50 dark:bg-gray-900 pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40"
     >
       {/* Footer content goes here */}
       <div className="flex justify-between lg:items-center max:lg-flex-col gap-10">
@@ -75,7 +75,7 @@ const Footer = ({theme }) => {
           </div>
         </motion.div>
       </div>
-      <hr className="border-gray-300 dark:border-gray-600 my-6" />
+      <hr className="border-gray-100 dark:border-gray-400 my-6" />
       {/* Bottom footer */}
       <motion.div
         initial={{ opacity: 0 }}
