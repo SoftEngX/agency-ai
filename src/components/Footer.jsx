@@ -75,7 +75,7 @@ const Footer = ({theme }) => {
           </div>
         </motion.div>
       </div>
-      <hr className="border-gray-100 dark:border-gray-400 my-6" />
+      <hr className="border-gray-300 dark:border-gray-600 my-6" />
       {/* Bottom footer */}
       <motion.div
         initial={{ opacity: 0 }}
